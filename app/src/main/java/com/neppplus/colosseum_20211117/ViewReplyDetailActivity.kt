@@ -59,10 +59,9 @@ class ViewReplyDetailActivity : BaseActivity() {
 
 //                    [] = {}  (JSONObject) 추출 -> ReplyData로 변환 -> 대댓글 목록에 추가 (최종목표)
 
-                    mReReplyList.add(ReplyData.getReplyDataFromJson(  repliesArr.getJSONObject(i)))
+                    mReReplyList.add(ReplyData.getReplyDataFromJson(repliesArr.getJSONObject(i)))
 
                 }
-
 
                 runOnUiThread {
 
