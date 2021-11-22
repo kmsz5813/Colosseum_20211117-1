@@ -15,7 +15,7 @@ class ViewReplyDetailActivity : BaseActivity() {
 
     lateinit var mReplyData: ReplyData
 
-    val mReReplyList = ArrayList<ReReplyAdapter>()
+    val mReReplyList = ArrayList<ReplyData>()
     lateinit var mReReplyAdapter : ReReplyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +25,24 @@ class ViewReplyDetailActivity : BaseActivity() {
         setupEvents()
     }
     override fun setupEvents() {
+
+        binding.btnOk.setOnClickListener {
+
+            val inputContent = binding.edtContent.text.toString()
+
+//            서버에 대댓글 등록 API 호출
+
+            ServerUtil.postRequestReReply(mContext, mReplyData.id, inputContent, object : ServerUtil.JsonResponseHandler{
+                override fun onResponse(jsonObj: JSONObject) {
+
+
+
+                }
+
+
+            })
+
+        }
 
     }
 
